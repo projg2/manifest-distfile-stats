@@ -65,5 +65,7 @@ for l in sys.stdin:
     groups[g].count += 1
     groups[g].size += f.size
 
+i=0
 for k, g in sorted(groups.items()):
-    print('"%s"\t%d' % (k, g.count))
+    print('%d "%s"\t%d' % (i, k, g.count))
+    i=i+1
