@@ -40,6 +40,7 @@ by-filename-checksum2.txt: $(MAN_TXT)
 
 by-filename.gnuplot: by-filename.txt Makefile
 	echo  '$(GNUPLOT_PREAMBLE)' >>$@.tmp
+	echo 'set logscale y' >>$@.tmp
 	echo 'set output "$(@:.gnuplot=.png)"' >>$@.tmp
 	echo 'nth(countCol,labelCol,n) = ((int(column(countCol)) % n == 0) ? stringcolumn(labelCol) : "")' >>$@.tmp
 	echo 'plot "by-filename.txt" using 3:xticlabels(2)' >>$@.tmp
